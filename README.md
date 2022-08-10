@@ -36,12 +36,12 @@
 * Commit your changes
 * To ensure the project will run correctly,
 * Download MySQL WorkBench
-* Run ```dotnet tool install --global dotnet-ef --version 5.0.1``` at a global level
+* Run ```dotnet tool install --global dotnet-ef --version 6.0.0``` at a global level
 * Run the following from the project directory of ```ProjectName```
-* Run ```dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0```
-* Run ```dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2```
-* Run ```dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0```
-* Run ```dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 5.0.0```
+* Run ```dotnet add package Microsoft.EntityFrameworkCore -v 6.0.0```
+* Run ```dotnet add package Pomelo.EntityFrameworkCore.MySql -v 6.0.0```
+* Run ```dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 6.0.0```
+* Run ```dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 6.0.0```
 * Once all of the necessary setup is in place and we can successfully run dotnet build
 * Run ```dotnet restore``` and ```dotnet build``` from the ProjectName directory
 * Run ```dotnet ef migrations add Initial``` from the ProjectName Directory
