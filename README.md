@@ -6,12 +6,7 @@
 
 * C#
 * .Net 6.0
-* HTML
-* CSS
-* Git
-* VsCode
 * EntityFrameWork
-* REPL
 * MySQL WorkBench
 
 ## Description 
