@@ -1,0 +1,17 @@
+@model ProjectName.Models.Item
+
+<h2>Add a Category</h2>
+
+<h4>Add a Category to this Item: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ItemId)
+
+    @Html.Label("Select Category")
+    @Html.DropDownList("CategoryId")
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

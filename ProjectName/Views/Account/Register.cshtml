@@ -1,0 +1,23 @@
+@using ProjectName.ViewModels
+
+@model RegisterViewModel
+
+<div class="container">
+  <hr />
+  <div id="table">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        @Html.LabelFor(user => user.Email)
+        @Html.TextBoxFor(user=> user.Email, new { required = "required" })<br>
+
+        @Html.LabelFor(user=> user.Password)
+        @Html.PasswordFor(user=> user.Password, new { required = "required" })<br>
+
+        @Html.LabelFor(user=> user.ConfirmPassword)
+        @Html.PasswordFor(user=> user.ConfirmPassword, new { required = "required" })<br>
+
+        <br><input type="submit" value="Register" class="btn btn-success"/>
+    }
+    </div>
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</div>

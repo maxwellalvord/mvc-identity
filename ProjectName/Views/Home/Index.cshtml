@@ -1,0 +1,43 @@
+﻿@using System.Security.Claims;
+@using ProjectName.Models;
+
+<div class="container">
+     
+     @if (User.Identity.IsAuthenticated)
+      {
+        <div id="tableOne">
+          
+            <ul>
+            @foreach (Item item in @ViewBag.Items)
+            {
+              <li>@Html.ActionLink($"{item.Name}", "Details", "Items", new { id = item.ItemId})</li>
+            }
+            </ul>
+          </div>
+          <div id="tableOne">
+            <ul>
+            @foreach (Category category in @ViewBag.Categories)
+            {
+              <li>@Html.ActionLink($"{category.Name}", "Details", "Categories", new { id = category.CategoryId })</li>
+            }
+            </ul>
+          </div>   
+          <table id="table">
+            <tr>
+              <td>@Html.ActionLink("Your Categories", "Index", "Categories")</td> 
+              <td>@Html.ActionLink("Your Items", "Index", "Items")</td>
+              <td>@Html.ActionLink("Account Info", "Index", "Account")</td>
+            </tr>
+          </table>  
+      }
+      else
+      {
+        <table id="table">
+          <tr>
+            <td>@Html.ActionLink("See all Categories", "Index", "Categories")</td> 
+            <td>@Html.ActionLink("See all Items", "Index", "Items")</td>
+            <br><td>@Html.ActionLink("Create an account", "Index", "Account")</td>
+          </tr>
+        </table> 
+      } 
+</div>

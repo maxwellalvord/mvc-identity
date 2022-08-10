@@ -1,0 +1,26 @@
+@using ProjectName.ViewModels
+
+@model LoginViewModel
+
+
+<div class="container">
+  <hr />
+  <div id="table">
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)<br>
+
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)<br>
+
+        <br><input type="submit" value="Log in" class="btn btn-success" /><br>
+    }
+  </div>
+  <table id="table">
+    <tr>
+      <td>@Html.ActionLink("Register", "Register")</td>
+      <td>@Html.ActionLink("Home", "Index", "Home")</td>
+    </tr>
+  </table>
+</div>

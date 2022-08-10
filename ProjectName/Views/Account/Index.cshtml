@@ -1,0 +1,25 @@
+
+<div class="container">
+  
+  @if (User.Identity.IsAuthenticated)
+  {
+    <p>Hi @User.Identity.Name!</p>
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+        <div id="table">
+        <input type="submit" value="Log out" />
+        </div>
+    }
+  }
+  else
+  {
+  <hr />
+    <table id="table">
+      <tr>
+        <td>@Html.ActionLink("Register", "Register")</td>
+        <td>@Html.ActionLink("Log in", "Login")</td>
+      </tr>
+    </table>
+  }
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</div>

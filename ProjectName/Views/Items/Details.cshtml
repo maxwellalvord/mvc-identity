@@ -1,0 +1,35 @@
+@model ProjectName.Models.Item;
+
+<div class="container">
+
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+  @if(@Model.JoinEntities.Count == 0)
+  {
+    <p>This Item does not contain any Categories</p>
+  }
+  else
+  {
+    <h4>Categories the Item contains:</h4>
+    <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        <li>@join.Category.Name</li>
+        @using (Html.BeginForm("DeleteCategory", "Items"))
+        {
+          @Html.Hidden("joinId", @join.CategoryItemId)
+          <input type="submit" value="Delete" class="btn btn-danger"/>
+        }
+      }
+    </ul>
+  }
+
+  <table id="table">
+    <tr>
+      <td>@Html.ActionLink("Add a Category", "AddCategory", new {id = Model.ItemId})</td>
+      <td>@Html.ActionLink("Back to Items", "Index")</td>
+      <td>@Html.ActionLink("Edit Item", "Edit", new {id = Model.ItemId })</td>
+      <td>@Html.ActionLink("Delete Item", "Delete", new {id = Model.ItemId })</td>
+    </tr>
+  </table>
+</div>
